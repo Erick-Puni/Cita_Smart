@@ -1,0 +1,92 @@
+{
+  "project_info": {
+    "project_number": "394423331755",
+    "project_id": "cita-smart",
+    "storage_bucket": "cita-smart.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:394423331755:android:62cad58689398514d140ee",
+        "android_client_info": {
+          "package_name": "app.punisoft.citasmart"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "394423331755-vp824cdv67b4lfpk0h0j4thaabfvef8o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "app.punisoft.citasmart",
+            "certificate_hash": "62e4383f313fdb7d89c9e0ff206ff4518c29c8d6"
+          }
+        },
+        {
+          "client_id": "394423331755-voa564bk3mp5s81muhjtq89hs20kddob.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDktO-ivEKKXRbybFRiglcTIAkh8v5e1a8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "394423331755-voa564bk3mp5s81muhjtq89hs20kddob.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:394423331755:android:6824bb12bf29003dd140ee",
+        "android_client_info": {
+          "package_name": "com.example.citasmart"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "394423331755-hq7i3mk14ddpodnpv1p4nnanlke4lnh2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.citasmart",
+            "certificate_hash": "62e4383f313fdb7d89c9e0ff206ff4518c29c8d6"
+          }
+        },
+        {
+          "client_id": "394423331755-n07kjhibsojsel56h62mq0guaqhr4ovc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.citasmart",
+            "certificate_hash": "550033fe50b336357c790eab271b92c2538bd09b"
+          }
+        },
+        {
+          "client_id": "394423331755-voa564bk3mp5s81muhjtq89hs20kddob.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDktO-ivEKKXRbybFRiglcTIAkh8v5e1a8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "394423331755-voa564bk3mp5s81muhjtq89hs20kddob.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

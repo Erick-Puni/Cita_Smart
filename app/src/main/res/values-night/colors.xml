@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Colores principales (puedes mantener el mismo o ajustar para mejor contraste) -->
+    <color name="colorPrimary">#009688</color>
+    <color name="colorPrimaryVariant">#80CBC4</color>
+    <color name="colorSecondary">#224e87</color>
+    <color name="colorSecondaryVariant">#90A4AE</color>
+
+    <!-- Fondos y superficies en modo oscuro -->
+    <color name="colorBackground">#121212</color>
+    <color name="colorSurface">#1E1E1E</color>
+
+    <!-- Error adaptado -->
+    <color name="colorError">#CF6679</color>
+
+    <!-- Colores para contenido en modo oscuro -->
+    <color name="colorOnPrimary">#000000</color>
+    <color name="colorOnSecondary">#FFFFFF</color>
+    <color name="colorOnBackground">#FFFFFF</color>
+    <color name="colorOnSurface">#FFFFFF</color>
+    <color name="colorOnError">#000000</color>
+
+    <!-- Color para íconos en modo oscuro -->
+    <color name="colorIcon">#224e87</color>
+</resources>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nestedScrollViewDashboard"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:colorBackground"
+    android:padding="16dp"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:id="@+id/dashboardContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <!-- Ícono de la app -->
+        <ImageView
+            android:id="@+id/ivAppIcon"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/ic_launcher"
+            android:layout_marginTop="24dp"/>
+
+        <!-- Mensaje de bienvenida -->
+        <TextView
+            android:id="@+id/tvWelcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bienvenido a CitaSmart"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="?attr/colorOnBackground"
+            android:layout_marginTop="16dp"/>
+
+        <!-- Instrucción para elegir fecha -->
+        <TextView
+            android:id="@+id/tvChooseDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Elige una fecha para ver tus citas"
+            android:textSize="16sp"
+            android:textColor="?attr/colorOnBackground"
+            android:layout_marginTop="24dp"/>
+
+        <!-- CalendarView para seleccionar la fecha -->
+        <CalendarView
+            android:id="@+id/calendarViewDashboard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:fitsSystemWindows="true"/>
+
+        <!-- Botón para ver citas del día seleccionado -->
+        <Button
+            android:id="@+id/btnViewAppointments"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ver Citas"
+            android:backgroundTint="?attr/colorPrimary"
+            android:textColor="?attr/colorOnPrimary"
+            android:layout_marginTop="24dp"
+            android:padding="12dp"/>
+
+        <!-- Separador visual -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?attr/colorOnBackground"
+            android:layout_marginTop="32dp"/>
+
+        <!-- Sección para solicitar rol de Administrador -->
+        <TextView
+            android:id="@+id/tvAdminInstruction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="¿Eres profesional de la salud? Solicita el rol de administrador para acceder a funciones avanzadas."
+            android:textSize="16sp"
+            android:textColor="?attr/colorOnBackground"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="24dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnRequestAdminRole"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Solicitar Rol de Administrador"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

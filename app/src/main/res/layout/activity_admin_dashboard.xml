@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nestedScrollViewAdmin"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:colorBackground"
+    android:padding="16dp"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:id="@+id/adminDashboardContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="16dp">
+
+        <!-- Ícono de la app -->
+        <ImageView
+            android:id="@+id/ivAppIconAdmin"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_launcher"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Mensaje de bienvenida -->
+        <TextView
+            android:id="@+id/tvWelcomeAdmin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bienvenido al Panel de Administrador"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="?attr/colorOnBackground"
+            android:gravity="center"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Instrucción para elegir fecha -->
+        <TextView
+            android:id="@+id/tvChooseDateAdmin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Elige una fecha para ver las citas"
+            android:textSize="16sp"
+            android:textColor="?attr/colorOnBackground"
+            android:gravity="center"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- CalendarView con mejor apariencia -->
+        <CalendarView
+            android:id="@+id/calendarViewAdmin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorSurface"
+            android:elevation="4dp"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Botón para ver citas -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnViewAdminAppointments"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ver Citas"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Separador visual -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?attr/colorOnBackground"
+            android:alpha="0.2"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Sección para agregar médicos -->
+        <TextView
+            android:id="@+id/tvAddDoctorInstruction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="¿Deseas agregar un médico?"
+            android:textSize="16sp"
+            android:textColor="?attr/colorOnBackground"
+            android:gravity="center"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Botón para añadir médico -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAddDoctor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Añadir Médico"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

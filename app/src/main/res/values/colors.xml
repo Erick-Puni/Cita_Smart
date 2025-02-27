@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Colores principales -->
+    <color name="colorPrimary">#009688</color>           <!-- Turquesa -->
+    <color name="colorPrimaryVariant">#00796B</color>
+    <color name="colorSecondary">#224e87</color>           <!-- Color de tus íconos -->
+    <color name="colorSecondaryVariant">#1B3A65</color>
+
+    <!-- Colores de fondo y superficie -->
+    <color name="colorBackground">#FFFFFF</color>
+    <color name="colorSurface">#FFFFFF</color>
+
+    <!-- Colores para errores -->
+    <color name="colorError">#B00020</color>
+
+    <!-- Colores para contenido -->
+    <color name="colorOnPrimary">#FFFFFF</color>
+    <color name="colorOnSecondary">#FFFFFF</color>
+    <color name="colorOnBackground">#000000</color>
+    <color name="colorOnSurface">#000000</color>
+    <color name="colorOnError">#FFFFFF</color>
+
+    <!-- Si deseas un color específico para íconos -->
+    <color name="colorIcon">#224e87</color>
+</resources>

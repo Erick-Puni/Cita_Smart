@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:colorBackground"
+    android:padding="16dp"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Ícono de la app -->
+        <ImageView
+            android:id="@+id/ivAppIcon"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_launcher"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="24dp"/>
+
+        <!-- Encabezado -->
+        <TextView
+            android:id="@+id/tvRequestHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Solicitar Rol de Administrador"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="?attr/colorOnBackground"
+            app:layout_constraintTop_toBottomOf="@id/ivAppIcon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp"/>
+
+        <!-- Mensaje informativo sobre el rol -->
+        <TextView
+            android:id="@+id/tvRoleInfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Con el rol de Administrador tendrás acceso a funciones avanzadas:"
+            android:textSize="16sp"
+            android:textColor="?attr/colorOnBackground"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/tvRequestHeader"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="18dp"/>
+
+        <!-- Lista de beneficios -->
+        <TextView
+            android:id="@+id/tvAdminBenefits"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="✔ Agregar médicos.\n✔ Editar citas.\n✔ Ver citas canceladas.\n\n❌ No pueden agendar citas."
+            android:textSize="14sp"
+            android:textColor="?attr/colorOnSurface"
+            android:lineSpacingExtra="6dp"
+            app:layout_constraintTop_toBottomOf="@id/tvRoleInfo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="12dp"/>
+
+        <!-- Campo de justificación -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilMessage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="?attr/colorPrimary"
+            app:boxCornerRadiusTopStart="16dp"
+            app:boxCornerRadiusTopEnd="16dp"
+            app:boxCornerRadiusBottomStart="16dp"
+            app:boxCornerRadiusBottomEnd="16dp"
+            app:layout_constraintTop_toBottomOf="@id/tvAdminBenefits"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="18dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Explica por qué solicitas el rol de administrador"
+                android:minHeight="120dp"
+                android:gravity="top"
+                android:padding="12dp"
+                android:textColor="?attr/colorOnBackground"
+                android:textColorHint="?attr/colorOnSurface"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Aviso sobre la notificación por correo -->
+        <TextView
+            android:id="@+id/tvNotificationInfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="📩 Si tu solicitud es aprobada, recibirás una notificación en tu correo electrónico."
+            android:textSize="14sp"
+            android:textColor="?attr/colorError"
+            android:gravity="center_horizontal"
+            android:lineSpacingExtra="6dp"
+            app:layout_constraintTop_toBottomOf="@id/tilMessage"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp"/>
+
+        <!-- Botón para enviar la solicitud -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSubmitRequest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enviar Solicitud"
+            style="@style/Widget.MaterialComponents.Button"
+            app:layout_constraintTop_toBottomOf="@id/tvNotificationInfo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="24dp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
