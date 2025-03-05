@@ -53,8 +53,6 @@ Cita Smart es una aplicación Android desarrollada en **Kotlin** para la gestió
 ## 📌 Contribuciones
 ¡Las contribuciones son bienvenidas! Si deseas contribuir, por favor abre un **Pull Request** o un **Issue** en el repositorio.
 
-## 📄 Licencia
-Este proyecto está bajo la licencia **MIT**. Puedes ver más detalles en el archivo `LICENSE`.
 
 ---
 <p align="center">Hecho con ❤️ por <strong>PuniSoft</strong></p>
