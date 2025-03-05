@@ -5,7 +5,10 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AlertDialog
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import app.punisoft.citasmart.databinding.ActivityAdminAppointmentsBinding
 import com.google.firebase.firestore.FirebaseFirestore
 import java.text.SimpleDateFormat
@@ -45,6 +48,7 @@ class AdminAppointmentsActivity : AppCompatActivity() {
             }
             startActivity(intent)
         })
+
         binding.rvAdminAppointments.layoutManager = LinearLayoutManager(this)
         binding.rvAdminAppointments.adapter = adapter
 
@@ -53,6 +57,9 @@ class AdminAppointmentsActivity : AppCompatActivity() {
 
         // Iniciar el snapshot listener para obtener citas en tiempo real para la fecha seleccionada.
         listenForAppointments(selectedDate)
+
+        // Habilitar swipe-to-delete para eliminar en Firebase si la cita está cancelada
+        enableSwipeToDelete()
     }
 
     // Función para obtener la fecha actual en formato "dd/MM/yyyy"
@@ -101,5 +108,52 @@ class AdminAppointmentsActivity : AppCompatActivity() {
             .addOnFailureListener { exception ->
                 Toast.makeText(this, "Error al cancelar la cita: ${exception.message}", Toast.LENGTH_SHORT).show()
             }
+    }
+
+    // Función para habilitar swipe-to-delete que elimina la cita en Firebase si está cancelada, con confirmación
+    private fun enableSwipeToDelete() {
+        val itemTouchHelper = ItemTouchHelper(object : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
+            override fun onMove(
+                recyclerView: RecyclerView,
+                viewHolder: RecyclerView.ViewHolder,
+                target: RecyclerView.ViewHolder
+            ): Boolean {
+                return false // No permitimos mover ítems
+            }
+
+            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                val position = viewHolder.adapterPosition
+                // Obtener la cita usando un método getItem() del adapter
+                val appointment = adapter.getItem(position)
+                if (appointment.estado == "cancelada") {
+                    // Mostrar un diálogo de confirmación antes de borrar
+                    AlertDialog.Builder(this@AdminAppointmentsActivity)
+                        .setTitle("Confirmar eliminación")
+                        .setMessage("¿Está seguro de que desea borrar esta cita? Esta acción es irreversible.")
+                        .setPositiveButton("Sí") { dialog, _ ->
+                            db.collection("citas").document(appointment.id)
+                                .delete()
+                                .addOnSuccessListener {
+                                    Toast.makeText(this@AdminAppointmentsActivity, "Cita eliminada", Toast.LENGTH_SHORT).show()
+                                    // El snapshot listener actualizará la lista automáticamente
+                                }
+                                .addOnFailureListener { exception ->
+                                    Toast.makeText(this@AdminAppointmentsActivity, "Error al eliminar cita: ${exception.message}", Toast.LENGTH_SHORT).show()
+                                    adapter.notifyItemChanged(position)
+                                }
+                        }
+                        .setNegativeButton("Cancelar") { dialog, _ ->
+                            adapter.notifyItemChanged(position)
+                            dialog.dismiss()
+                        }
+                        .setCancelable(false)
+                        .show()
+                } else {
+                    Toast.makeText(this@AdminAppointmentsActivity, "Solo se pueden eliminar citas canceladas.", Toast.LENGTH_SHORT).show()
+                    adapter.notifyItemChanged(position)
+                }
+            }
+        })
+        itemTouchHelper.attachToRecyclerView(binding.rvAdminAppointments)
     }
 }

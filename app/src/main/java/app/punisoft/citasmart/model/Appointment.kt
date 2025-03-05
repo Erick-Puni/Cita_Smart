@@ -4,7 +4,7 @@ data class Appointment(
     var id: String = "",
     var userId: String = "",
     var medicoId: String = "",
-    var fecha: String = "",   // Formato: "dd/MM/yyyy"
+    var fecha: String = "",   
     var hora: String = "",
     var estado: String = "",
     var detalles: String = "",

@@ -7,13 +7,16 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import app.punisoft.citasmart.databinding.ItemAppointmentBinding
-
+import app.punisoft.citasmart.model.Appointment
 
 class AppointmentsAdapter(
-    private var appointments: List<app.punisoft.citasmart.model.Appointment>,
-    private val onCancel: (app.punisoft.citasmart.model.Appointment) -> Unit,
-    private val onEdit: (app.punisoft.citasmart.model.Appointment) -> Unit  // Lambda para editar
+    appointments: List<Appointment>,
+    private val onCancel: (Appointment) -> Unit,
+    private val onEdit: (Appointment) -> Unit  // Lambda para editar
 ) : RecyclerView.Adapter<AppointmentsAdapter.AppointmentViewHolder>() {
+
+    // Convertimos la lista a mutable para poder eliminar elementos
+    private var appointments: MutableList<Appointment> = appointments.toMutableList()
 
     inner class AppointmentViewHolder(val binding: ItemAppointmentBinding) :
         RecyclerView.ViewHolder(binding.root)
@@ -91,9 +94,18 @@ class AppointmentsAdapter(
 
     override fun getItemCount(): Int = appointments.size
 
+    // Método para obtener un item por su posición
+    fun getItem(position: Int): Appointment = appointments[position]
+
     // Actualiza la lista y notifica los cambios
-    fun updateData(newAppointments: List<app.punisoft.citasmart.model.Appointment>) {
-        appointments = newAppointments
+    fun updateData(newAppointments: List<Appointment>) {
+        appointments = newAppointments.toMutableList()
         notifyDataSetChanged()
+    }
+
+    // Elimina un item de la lista y notifica el cambio
+    fun removeItem(position: Int) {
+        appointments.removeAt(position)
+        notifyItemRemoved(position)
     }
 }
